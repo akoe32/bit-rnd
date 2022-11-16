@@ -3,7 +3,7 @@ resource "aws_instance" "apps-instance-ec2" {
   instance_type          = "t2.micro"
   key_name               = "devops-key"
   iam_instance_profile   = "AmazonSSMRoleForInstancesQuickSetup"
-  subnet_id              = "aws_subnet.staging-public-subnet-a.id"
+  subnet_id              = "${var.staging-public-subnet-a}"
 
   tags = {
     Name        = "apps-instance"

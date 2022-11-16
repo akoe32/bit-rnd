@@ -56,4 +56,5 @@ variable "EC2_AMI" {
     "ap-southeast-2" = "ami-0009ba887e00637bd"
   }
 }
-
+variable "staging-public-subnet-a" {
+}

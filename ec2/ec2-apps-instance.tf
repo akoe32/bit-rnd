@@ -4,15 +4,15 @@ resource "aws_instance" "apps-instance-ec2" {
   key_name               = "devops-key"
   iam_instance_profile   = "AmazonSSMRoleForInstancesQuickSetup"
   user_data              = <<EOF 
-  #!/bin/bash
-  echo "Install Docker dependencies"
-  sudo apt update
-  sudo apt install apt-transport-https curl postgresql-client git gnupg-agent ca-certificates software-properties-common -y
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
-  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-  sudo apt install docker-ce docker-compose-plugin docker-ce-cli containerd.io -y
-  sudo usermod -aG docker $USER
-  docker version   
+                #!/bin/bash
+                echo "Install Docker dependencies"
+                sudo apt update
+                sudo apt install apt-transport-https curl postgresql-client git gnupg-agent ca-certificates software-properties-common -y
+                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+                sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+                sudo apt install docker-ce docker-compose-plugin docker-ce-cli containerd.io -y
+                sudo usermod -aG docker $USER
+                docker version   
   EOF
   subnet_id              = "${var.EC2_PUBLIC_SUBNET}"
 

@@ -1,6 +1,6 @@
 provider "aws" {
-  access_key = "$AWS_ACCESS_KEY"
-  secret_key = "$AWS_SECRET_KEY"
+  access_key = "${var.AWS_ACCESS_KEY}"
+  secret_key = "${var.AWS_SECRET_KEY}"
   region = "ap-southeast-1"
   skip_region_validation = true
 #  assume_role {

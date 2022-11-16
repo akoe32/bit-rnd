@@ -142,10 +142,6 @@ resource "aws_route_table" "staging-route-live-rtb" {
     cidr_block = "0.0.0.0/0"
     gateway_id = "${aws_internet_gateway.staging-igw.id}"
   }
-  route {
-    cidr_block = "172.19.0.0/16"
-    vpc_peering_connection_id = "${aws_vpc_peering_connection.middleware-to-staging-vpc.id}"
-  }
 
   tags = {
     Name    = "staging-route-live-rtb"

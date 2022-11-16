@@ -38,7 +38,7 @@ variable APPS_DB_USER{
     default = "postgres"
 }
 variable APPS_DB_PORT{
-    default = "5432
+    default = "5432"
 }
 variable APPS_OWM_API_KEY{
     default = "coba"

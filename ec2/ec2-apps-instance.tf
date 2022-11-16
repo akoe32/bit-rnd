@@ -10,7 +10,7 @@ resource "aws_instance" "apps-instance-ec2" {
     Init        = "terraform"
     recipe      = "${var.IAC_REPO_BRANCH}"
   }
-  user_data     = <<EOF 
+  user_data     = << EOF 
     #!/bin/bash
     echo "Install Docker dependencies"
     sudo apt update

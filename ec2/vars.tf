@@ -56,3 +56,6 @@ variable "EC2_AMI" {
     "ap-southeast-2" = "ami-0009ba887e00637bd"
   }
 }
+variable "EC2_PUBLIC_SUBNET"{
+  default = "${aws_subnet.staging-public-subnet-a.id}"
+}

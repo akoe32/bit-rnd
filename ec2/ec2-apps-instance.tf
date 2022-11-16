@@ -3,7 +3,6 @@ resource "aws_instance" "apps-instance-ec2" {
   instance_type          = "t2.micro"
   key_name               = "devops-key"
   iam_instance_profile   = "AmazonSSMRoleForInstancesQuickSetup"
-  subnet_id              = "subnet-06289404de3c2053a"
   user_data              = <<EOF 
   #!/bin/bash
   echo "Install Docker dependencies"
@@ -15,6 +14,7 @@ resource "aws_instance" "apps-instance-ec2" {
   sudo usermod -aG docker $USER
   docker version   
   EOF
+  subnet_id              = "${var.EC2_PUBLIC_SUBNET}"
 
   tags = {
     Name        = "apps-instance"

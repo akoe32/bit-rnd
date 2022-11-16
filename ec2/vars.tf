@@ -49,3 +49,10 @@ variable APPS_OWM_LOCATION{
 variable APPS_OWM_UNITS{
     default = "metric"
 }
+variable "EC2_AMI" {
+  type = map
+  default = {
+    "ap-southeast-1" = "ami-0ff297662c4840aa5"
+    "ap-southeast-2" = "ami-0009ba887e00637bd"
+  }
+}

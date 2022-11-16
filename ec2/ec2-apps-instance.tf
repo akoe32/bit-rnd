@@ -1,9 +1,8 @@
 resource "aws_instance" "apps-instance-ec2" {
   ami                    = "${lookup(var.EC2_AMI, var.AWS_REGION)}"
   instance_type          = "t2.micro"
-  key_name               = ${var.EC2_KEY_NAME}
+  key_name               = "devops-key"
   iam_instance_profile   = "AmazonSSMRoleForInstancesQuickSetup"
-  vpc_security_group_ids = [aws_security_group.teleport-ec2-sg.id]
   subnet_id              = "subnet-06289404de3c2053a"
   user_data              = <<EOF 
   #!/bin/bash

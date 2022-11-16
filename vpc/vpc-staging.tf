@@ -54,11 +54,7 @@ resource "aws_route_table" "staging-private-rtb" {
 
   route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = "${aws_nat_gateway.main-nat-staging-private-natgw.id}"
-  }
-  route {
-    cidr_block = "172.19.0.0/16"
-    vpc_peering_connection_id = "${aws_vpc_peering_connection.middleware-to-staging-vpc.id}"
+    nat_gateway_id = "${aws_nat_gateway.nat-staging-private-natgw.id}"
   }
 
   tags = {

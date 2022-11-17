@@ -16,3 +16,6 @@ output "staging-public-subnet-b-out" {
 output "staging-public-subnet-c-out" {
   value = "${aws_subnet.staging-public-subnet-c.id}"
 }
+output "sg-vpc-out"{
+  value = "${aws_security_group.sg-vpc.id}"
+}

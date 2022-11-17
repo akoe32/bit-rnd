@@ -1,17 +1,17 @@
-resource "aws_db_instance" "dev-asgard-rds" {
+resource "aws_db_instance" "bit-rnd" {
  
   engine                          = "postgres"
   identifier                      = "bit-rnd"
   allocated_storage               = 30
   instance_class                  = "db.t3.micro"
   engine_version                  = "10.22"
-  username                        = "sys-admin"
-  password                        = "C0b4LahS^j483"
+  username                        = "administrator"
+  password                        = "C0b4LahS4j483"
   publicly_accessible             = true
   skip_final_snapshot             = false
   db_subnet_group_name            = "public-staging-db-subnet-group"
   vpc_security_group_ids          = [
-                                     "sg-00f17554e814f4e61"
+                                     "sg-0ea72750368d3416e"
                                     ]
   tags = {
     Name         = "bit-rnd"
